@@ -2,7 +2,7 @@
 
 Experimental Android client for sing-box, the universal proxy platform.
 
-# how to compile
+## how to compile
 
 find a linux machine, use docker or podman, for example using podman:
 `podman run --rm -it -v $PWD:/app -w /app fabernovel/android:api-31-gcloud-ndk-snapshot bash`
@@ -26,6 +26,8 @@ then in sing-box-for-android, compile:
 
 `./gradlew :app:assembleDebug`
 
+## video link 视频讲解
+[youtube视频 - sing-box 安卓汉化版 编译](https://www.youtube.com/watch?v=nf16ap-a3PI)
 ## Documentation
 
 https://sing-box.sagernet.org/installation/clients/sfa/
