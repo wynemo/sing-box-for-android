@@ -2,6 +2,30 @@
 
 Experimental Android client for sing-box, the universal proxy platform.
 
+# how to compile
+
+find a linux machine, use docker or podman run:
+podman run --rm -it -v $PWD:/app -w /app fabernovel/android:api-31-gcloud-ndk-snapshot bash
+
+then in container:
+
+```
+wget -c https://go.dev/dl/go1.23.3.linux-amd64.tar.gz
+rm -rf /usr/local/go && tar -C /usr/local -xzf go1.23.3.linux-amd64.tar.gz
+export PATH=$PATH:/usr/local/go/bin
+git clone https://github.com/SagerNet/sing-box.git
+cd sing-box
+make lib_install
+export PATH=$PATH:/root/go/bin/
+make lib_android
+```
+
+copy libbox.aar to sing-box-for-android/app/libs/
+
+then in sing-box-for-android, compile:
+
+`./gradlew :app:assembleDebug`
+
 ## Documentation
 
 https://sing-box.sagernet.org/installation/clients/sfa/
